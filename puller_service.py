@@ -18,14 +18,11 @@ class hello:
         payload = response['payload'][0]
         data = json.loads(payload)
         if data['ref']==REF:
-            code1 = call(PULL_CMD.split())
-            print code1
+            call(PULL_CMD.split())
             if os.path.isfile(WSGI_PATH):
-                code2 =call(RESRTART_CMD.split())
-                print code2
+                call(RESTART_CMD.split())
             else:
                 print 'no such file: %s' % WSGI_PATH
-
 
 if __name__ == "__main__":
     app.run()
