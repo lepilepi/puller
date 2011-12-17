@@ -1,0 +1,5 @@
+REF = 'refs/heads/master'
+PATH = '/usr/local/www/.../site/.git'
+REMOTE = 'upstream'
+BRANCH = 'master'
+WSGI_PATH = 'touch /usr/local/www/.../wsgi/site.wsgi'
