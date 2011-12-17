@@ -23,6 +23,9 @@ class hello:
             if os.path.isfile(WSGI_PATH):
                 code2 =call(RESRTART_CMD.split())
                 print code2
+            else:
+                print 'no such file: %s' % WSGI_PATH
+
 
 if __name__ == "__main__":
     app.run()
