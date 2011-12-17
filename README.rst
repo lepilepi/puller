@@ -2,6 +2,7 @@
 Puller
 ============
 It automatically pulls from a git repository every time when a push occurred in a github repo.
+Note: please, do not use on production site! It is for development only.
 
 Requirements
 ------------
