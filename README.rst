@@ -1,38 +1,33 @@
-test 
-{
-    'payload': [
-        '{"pusher":
-            {"name":"lepilepi","email":"lepi@symbler.com"},
-            "repository":{
-                "name":"puller",
-                "has_wiki":true,
-                "size":96,
-                "created_at":"2011/12/16 18:37:02 -0800",
-                "private":false,
-                "watchers":1,
-                "url":"https://github.com/lepilepi/puller",
-                "fork":false,
-                "pushed_at":"2011/12/16 18:41:12 -0800",
-                "has_downloads":true,
-                "open_issues":0,
-                "homepage":"",
-                "has_issues":true,
-                "forks":1,
-                "description":"autopull from github",
-                "owner":{"name":"lepilepi","email":"lepi@symbler.com"}},
-                "forced":false,
-                "after":"9bb1729e37d7e32565b1934ce31b6f1727d528fa",
-                "deleted":false,
-                "commits":[{
-                    "added":[],
-                    "modified":["README"],
-                    "timestamp":"2011-12-16T18:41:11-08:00",
-                        "author":{"name":"Lepi","username":"lepilepi","email":"lepi@symbler.com"},"removed":[],"url":"https://github.com/lepilepi/puller/commit/9bb1729e37d7e32565b1934ce31b6f1727d528fa","id":"9bb1729e37d7e32565b1934ce31b6f1727d528fa","distinct":true,"message":"Update README"}
-                ],
-                "ref":"refs/heads/master",
-                "compare":"https://github.com/lepilepi/puller/compare/5992fa4...9bb1729",
-                "before":"5992fa42784a05fb0714423062075321cf2576ed",
-                "created":false
-        }'
-    ]
-}
+============
+Puller
+============
+It automatically pulls from a git repository every time when a push occurred in a github repo.
+
+Requirements
+------------
+
+* python 2.6
+* web.py
+
+Configure receiver
+------------------
+First create a `config.py` file in the same directory with `puller_service.py`.(Rename `config.template.py`)
+
+Required options:
+
+* `REF`: This ref will be watched only, if the push is for other branch, nothing wil happen
+* `PATH`: The location of the `.git` folder
+* `REMOTE`: The code will be pulled from this remote.
+* `BRANCH`: This branch will be pulled, and merged locally.
+* `WSGI_PATH`: The path ot the wsgi file, if the project runs with wsgi. This file will be touched to restart.
+
+To start the service:
+
+`python puller_service 0.0.0.0:8000`
+
+Set up git
+----------
+In repository admin go to the service hooks (/admin/hooks).
+Select `Post-Receive URLs`, and type your url, where puller_service runs, for example: `http://your.domain.com:8000/`
+
+enjoy
