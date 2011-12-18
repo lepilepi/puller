@@ -2,6 +2,7 @@
 Puller
 ============
 It automatically pulls from a git repository every time when a push occurred in a github repo.
+
 Note: please, do not use on production site! It is for development only.
 
 Requirements
@@ -16,7 +17,7 @@ First create a `config.py` file in the same directory with `puller_service.py`.(
 
 Required options:
 
-* `REF`: This ref will be watched only, if the push is for other branch, nothing wil happen
+* `REF`: This ref will be watched only, if the push is for other branch, nothing will happen
 * `PATH`: The location of the `.git` folder
 * `REMOTE`: The code will be pulled from this remote.
 * `BRANCH`: This branch will be pulled, and merged locally.
