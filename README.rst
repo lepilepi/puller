@@ -1,7 +1,7 @@
 ============
 Puller
 ============
-It automatically pulls from a git repository every time when a push occurres in a github repo.
+It automatically pulls from a git repository every time a push occurres in a github repo.
 
 Note: please, do not use on production site! It is for development only.
 
